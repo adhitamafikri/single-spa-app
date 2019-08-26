@@ -1,8 +1,6 @@
 ## Learn Micro Frontend with Single-SPA
 
-## Step 1
-
-### installing Dependencies
+### Step 1: installing Dependencies
 #### Install Regular Dependencies
 `yarn add react react-dom vue single-spa single-spa-react single-spa-vue`
 
