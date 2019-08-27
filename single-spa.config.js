@@ -4,15 +4,18 @@ import {
 } from 'single-spa'
 
 registerApplication(
-  'react',
+  'home',
   () => import('./src/react/main.app.js'),
-  () => location.pathname === 'vue' ? false : true,
+  () => location.pathname === ''
+    || location.pathname === '/'
+    || location.pathname === '/home'
+    || location.pathname === '/react',
 )
 
 registerApplication(
   'vue',
   () => import('./src/vue/vue.app.js'),
-  () => location.pathname === 'react' ? false : true,
+  () => location.pathname === '/vue',
 )
 
 start()

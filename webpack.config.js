@@ -11,12 +11,13 @@ module.exports = {
     'single-spa.config': './single-spa.config.js',
   },
   output: {
-    publicPath: './dist',
+    publicPath: '/dist/',
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
   },
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
@@ -35,22 +36,17 @@ module.exports = {
     fs: 'empty',
   },
   resolve: {
-    alias: {
-      vue: 'vue/dist/vue.js'
-    },
     modules: [path.resolve(__dirname, 'node_modules')],
   },
   plugins: [
     new CleanWebpackPlugin(),
     new VueLoaderPlugin(),
-
   ],
   devtool: 'source-map',
   externals: [],
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
     historyApiFallback: true,
     hot: true,
-    port: 3006
+    port: 3006,
   }
 }
