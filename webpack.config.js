@@ -1,6 +1,8 @@
 const webpack = require('webpack')
 const path = require('path')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const {
+  CleanWebpackPlugin
+} = require('clean-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
@@ -14,8 +16,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
@@ -27,7 +28,7 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-      }
+      },
     ]
   },
   node: {
@@ -42,10 +43,12 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new VueLoaderPlugin(),
+
   ],
   devtool: 'source-map',
   externals: [],
   devServer: {
+    contentBase: path.join(__dirname, 'dist'),
     historyApiFallback: true,
     hot: true,
     port: 3006

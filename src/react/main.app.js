@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import singleSPAReact from 'single-spa-react'
+import singleSpaReact from 'single-spa-react'
 import App from './App'
 
 function domElementGetter() {
@@ -10,7 +10,7 @@ function domElementGetter() {
 const reactLifecycles = singleSpaReact({
   React,
   ReactDOM,
-  rootComponent: Home,
+  rootComponent: App,
   domElementGetter,
 })
 
